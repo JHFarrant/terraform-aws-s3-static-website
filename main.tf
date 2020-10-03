@@ -83,14 +83,14 @@ resource "aws_cloudfront_distribution" "cdn" {
 
   custom_error_response {
     error_code          = 403
-    response_page_path  = "/error.html"
-    response_code       = 404
+    response_page_path  = "${var.error_response_page_path}"
+    response_code       = "${var.error_response_code}"
   }
 
   custom_error_response {
     error_code          = 404
-    response_page_path  = "/error.html"
-    response_code       = 404
+    response_page_path  = "${var.error_response_page_path}"
+    response_code       = "${var.error_response_code}"
   }
 
   default_cache_behavior {

@@ -32,3 +32,15 @@ variable "zone_id" {
   description = "ID of the Route 53 Hosted Zone in which to create an alias record"
   type        = "string"
 }
+
+variable "error_response_page_path" {
+  description = "The html file that should be returned if the response code is 404 or 403."
+  type        = "string"
+  default     = "/error.html"
+}
+
+variable "error_response_code" {
+  description = "The status code that should be returned if the orignal response code is 404 or 403."
+  type        = number
+  default     = 404
+}
